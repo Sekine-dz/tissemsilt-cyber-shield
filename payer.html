@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الدفع قبل التواصل - درع تيسمسيلت</title>
+<style>
+body{background:#0a0a0a;color:white;font-family:Arial;text-align:center;padding:15px}
+.card{background:white;color:black;padding:25px;border-radius:20px;max-width:420px;margin:15px auto}
+input{width:90%;padding:14px;margin:8px 0;border-radius:10px;border:2px solid #ddd;font-size:16px}
+.btn{ display:block; background:#ccc; color:#666; padding:18px; border-radius:12px; text-decoration:none; font-weight:bold; font-size:20px; margin:15px 0; pointer-events:none }
+.btn.active{ background:#25D366; color:white; pointer-events:auto }
+.info{background:#FFD700;padding:12px;border-radius:10px;color:black;font-weight:bold}
+</style>
+</head>
+<body>
+
+<h2>🔒 الدفع أولا ثم التواصل</h2>
+<p>من فضلك خلص باش نفتح لك واتساب</p>
+
+<div class="card">
+  <div class="info">
+    CCP: 0042398324 - 73<br>
+    SEKINE ABDEL MADJID<br>
+    <small>خلص 200 دج على الأقل في البريد</small>
+  </div>
+
+  <input type="text" id="trx" placeholder="✍️ رقم الحوالة TRX إجباري - مثلا 12345678">
+  <input type="text" id="tel" placeholder="✍️ رقم هاتفك 06...">
+
+  <a id="waBtn" class="btn" href="#">🔒 خلص أولا باش يفتح واتساب</a>
+
+  <p id="msg" style="color:red;font-size:14px"></p>
+  <small>بدون رقم حوالة صحيح ما نقدرش نرد عليك</small>
+</div>
+
+<script>
+let trx = document.getElementById('trx');
+let btn = document.getElementById('waBtn');
+let msg = document.getElementById('msg');
+
+trx.addEventListener('input', function(){
+  if(this.value.length >= 6){
+    btn.classList.add('active');
+    btn.innerHTML = '✅ افتح واتساب الآن';
+    btn.href = 'https://wa.me/2136XXXXXXXX?text=السلام خويا عبد المجيد، خلصتك%0ARقم الحوالة: ' + this.value + '%0Aرقمي: ' + document.getElementById('tel').value;
+    msg.innerHTML = '';
+  } else {
+    btn.classList.remove('active');
+    btn.innerHTML = '🔒 خلص أولا باش يفتح واتساب';
+    msg.innerHTML = 'لازم تكتب رقم الحوالة (6 أرقام على الأقل)';
+  }
+});
+</script>
+
+</body>
+</html>
