@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>درع تيسمسيلت</title>
+<style>
+body{background:#0a1931;color:#fff;font-family:Arial;text-align:center;margin:0}
+.top{background:#112240;padding:15px;border-bottom:3px solid #d4af37}
+.card{background:#112240;border:2px solid #d4af37;border-radius:15px;padding:20px;margin:15px auto;max-width:600px}
+input{width:95%;padding:14px;border-radius:8px;border:0;margin:10px 0;text-align:center;font-size:16px}
+button{background:#d4af37;color:#0a1931;padding:14px;border:0;border-radius:8px;font-weight:bold;width:95%;font-size:18px;cursor:pointer}
+.danger{background:#3a0a0a;border:2px solid red;padding:15px;border-radius:10px;margin-top:15px}
+.safe{background:#0a2a0a;border:2px solid #0f0;padding:15px;border-radius:10px;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="top">
+<h2 style="color:#d4af37;margin:0">🛡️ تيسمسيلت - الدرع السيبراني</h2>
+<p style="margin:5px 0">Tissemsilt Cyber Shield</p>
+</div>
+
+<div class="card">
+<h3 style="color:#d4af37">🔍 فاحص التهديدات - 0.2 ثانية</h3>
+<input id="u" placeholder="الصق رابط هنا... مثال: bit.ly/اربح">
+<button onclick="go()">افحص الآن →</button>
+<div id="r"></div>
+
+<div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+<div style="border:1px solid #d4af37;padding:10px;border-radius:8px">🛡️<br>حماية بالذكاء الاصطناعي</div>
+<div style="border:1px solid #d4af37;padding:10px;border-radius:8px">🔒<br>الدرع الآمن</div>
+<div style="border:1px solid #d4af37;padding:10px;border-radius:8px">🎯<br>دفاع فوري</div>
+</div>
+</div>
+
+<div class="card">
+<h3 style="color:#d4af37">💳 اطلب الحماية</h3>
+<p>CCP: 0042398324-73<br>السعر: 1500 دج / شهر</p>
+<a href="payer.html" style="background:#d4af37;color:#0a1931;padding:12px 20px;border-radius:8px;text-decoration:none;display:inline-block;margin-top:10px;font-weight:bold">ادفع الآن - bit.ly/4yYHc8x</a>
+</div>
+
+<script>
+function go(){
+let v=document.getElementById('u').value.toLowerCase();
+let d=document.getElementById('r');
+d.innerHTML='⏳ جاري الفحص...';
+setTimeout(()=>{
+if(v.includes('bit.ly')||v.includes('اربح')||v.includes('مبروك')||v.includes('hack')||v.includes('اختراق')||v.includes('free')||v.includes('هدية')){
+d.innerHTML='<div class= danger>🚨 تم اكتشاف خطر<br>✅ تم حجب التهديد في 0.2ث<br>المستوى: حرج<br>جهازك محمي الآن</div>';
+}else if(v==''){
+d.innerHTML='<div style=background:#112240;padding:10px;border-radius:8px>⚠️ ادخل رابط</div>';
+}else{
+d.innerHTML='<div class=safe>✅ آمن<br>تم الفحص في 0.2ث<br>لا يوجد تهديد - جهازك محمي</div>';
+}
+},600);
+}
+</script>
+</body>
+</html>
