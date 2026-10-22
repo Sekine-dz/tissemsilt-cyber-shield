@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الدفع - عبد المجيد سكين</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cairo',sans-serif;background:#070d17;color:white}
+.container{max-width:500px;margin:0 auto;padding:20px}
+.card{background:#121e2e;border:2px solid #00ff88;border-radius:20px;padding:25px;margin-top:20px}
+h1{text-align:center;color:#00ff88;margin:20px 0}
+label{display:block;margin:15px 0 5px;color:#8a9bb0;font-size:14px}
+input,select{width:100%;padding:14px;border-radius:12px;border:1px solid #1e3350;background:#0a101a;color:white;font-family:'Cairo'}
+.btn{width:100%;padding:16px;border-radius:12px;font-weight:900;border:none;margin-top:20px;cursor:pointer;font-family:'Cairo';font-size:16px}
+.btn-green{background:#00ff88;color:black}
+.btn-whats{background:#25D366;color:white}
+.info-box{background:#0a101a;border-right:4px solid #00ff88;padding:15px;border-radius:10px;margin:15px 0}
+.rip-box{background:linear-gradient(90deg,#ffcc00,#ff9900);color:black;padding:15px;border-radius:12px;text-align:center;font-weight:900;font-size:18px;margin:15px 0}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>💳 خلص عبر بريدي موب</h1>
+<p style="text-align:center;color:#8a9bb0">عبد المجيد سكين - درع تيسمسيلت</p>
+<div class="card">
+<div class="info-box">
+📱 <b>رقم بريدي موب:</b><br>
+<b style="color:#00ff88;font-size:20px">0655 58 49 73</b>
+</div>
+<div class="rip-box">
+RIP: بدل هذا برقمك الحقيقي<br>
+<small>CCP: 00799999004239832473- SEKINE A.</small>
+</div>
+<label>1️⃣ اختر الخدمة:</label>
+<select id="service">
+<option>🔍 فحص رابط - 200 دج</option>
+<option>📱 استرجاع واتساب - 1000 دج</option>
+<option selected>♻️ استرجاع فيسبوك - 1500 دج</option>
+<option>📚 دورة - 800 دج</option>
+<option>🛡️ حماية عائلة - 2500 دج</option>
+</select>
+<label>2️⃣ اسمك:</label>
+<input type="text" id="name" placeholder="محمد من تيسمسيلت">
+<label>3️⃣ واتساب تاعك:</label>
+<input type="text" id="phone" placeholder="06XXXXXXXX">
+<label>4️⃣ رقم العملية TRX من بريدي موب:</label>
+<input type="text" id="trans" placeholder="TRX123456">
+<button class="btn btn-green" onclick="generate()">✅ خلصت - أرسل واتساب</button>
+<div id="result" style="display:none;margin-top:20px">
+<a id="whatsLink" href="#" class="btn btn-whats" target="_blank">💬 افتح واتساب الآن</a>
+</div>
+</div>
+</div>
+<script>
+function generate(){
+ const service=document.getElementById('service').value;
+ const name=document.getElementById('name').value||'زبون';
+ const phone=document.getElementById('phone').value||'06XX';
+ const trans=document.getElementById('trans').value||'TRX';
+ const msg=`السلام عبد المجيد 🛡️\n✅ خلصتك عبر بريدي موب\n🔹 الخدمة: ${service}\n👤 الاسم: ${name}\n📱 رقمي: ${phone}\n💳 TRX: ${trans}\n📸 نبعث سكرين شوت`;
+ document.getElementById('summary')&&(document.getElementById('summary').innerText=msg);
+ const link=`https://wa.me/213655584973?text=${encodeURIComponent(msg)}`;
+ document.getElementById('whatsLink').href=link;
+ document.getElementById('result').style.display='block';
+}
+</script>
+</body>
+</html>
